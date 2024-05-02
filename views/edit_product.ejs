@@ -1,0 +1,52 @@
+<%- include('admin_navbar.ejs') %>
+    
+<link rel="stylesheet" href="/stylesheets/carSellForm.css">   
+    <nav class="navbar">
+        <div class="">
+            <h1> Admin Car Add Form</h1>
+        </div>
+    </nav>
+
+    <div class="container border mt-5" id="form">
+        <form action="/edit_product/<%=data._id%>" method="post">
+            <div class="mb-3">
+                <label for="UrunID">Car Model</label>
+                <input type="text" id="UrunID" name="modelType" value="<%= data.modelType %>">
+            </div>
+            <div class="mb-3">
+                <label for="UrunAdi">Model Name</label>
+                <input type="text" id="UrunAdi" name="modelName" value="<%= data.modelName %>">
+            </div>
+            <div class="mb-3">
+                <label for="UrunMiktar">Fual Type</label>
+                <input type="text" id="UrunMiktar" name="fuleType" value="<%= data.fuleType %>">
+            </div>
+            <div class="mb-3">
+                <label for="UrunMiktar">Year</label>
+                <input type="number" id="UrunMiktar"  name="year"  value="<%= data.year %>" >
+            </div>
+            <div class="mb-3">
+                <label for="UrunMiktar">Kilometeres</label>
+                <input type="number" id="UrunMiktar" name="kmRun" value="<%= data.kmRun %>">
+            </div>
+            <div class="mb-3">
+                <label for="UrunMiktar">Price</label>
+                <input type="number" id="UrunMiktar" name="price" value="<%= data.price %>">
+            </div>
+            <div class="mb-3">
+                <label for="brand">Brand</label>
+                <input type="text" id="brand" name="brand" value="<%= data.brand%>">
+            </div>
+            <div class="mb-3">
+                <label for="carColor">Color</label>
+                <input type="text" id="carColor" name="carColor" value="<%= data.carColor%>">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="Reset" id="ekleButton1">Reset</button>
+                <button type="submit" id="ekleButton">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+        

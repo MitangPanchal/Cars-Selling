@@ -1,0 +1,43 @@
+<%- include('header.ejs') %>
+<%-include('navbar.ejs') %>
+
+<br><br>
+<center><h1>Car Purchase By You</h1></center>
+<br><br>
+<main class="table" id="customers_table">
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th>Car Name</th>
+                    <th>Car Type<span class="icon-arrow"></span></th>
+                    <th> Transmission <span class="icon-arrow"></span></th>
+                    <th> Fule Type <span class="icon-arrow"></span></th>
+                    <th> Model Name <span class="icon-arrow"></span></th>
+                    <th>Model Type</th>
+                    <th>Cra Colour</th>
+                    <th>Price?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% user.carPurchase.forEach(function(data){ %>
+                    <tr>
+                        <td><%= data.modelName %></td>
+                        <td><%=data.modelType%></td>
+                        <td><%=data.transmission%></td>
+                        <td><%= data.fuleType%></td>
+                        <td><%= data.brand %></td>
+                        <td><%= data.year %></td>
+                        <td><%= data.carColor %></td>
+                        <td><%= data.price %></td>
+
+
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </section>
+</main>
+    
+
+<%- include('footer.ejs') %>

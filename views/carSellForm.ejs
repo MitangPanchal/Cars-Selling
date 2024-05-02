@@ -1,0 +1,75 @@
+<%- include('admin_navbar.ejs') %>
+    
+<link rel="stylesheet" href="/stylesheets/carSellForm.css">   
+    <nav class="navbar">
+        <div class="">
+            <h1> Admin Car Add Form</h1>
+        </div>
+    </nav>
+
+    <div class="container border mt-5" id="form">
+        <form action="/carPost" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="UrunID">Car Model</label>
+                <input type="text" id="UrunID" name="modelType" required >
+            </div>
+            <div class="mb-3">
+                <label for="UrunAdi">Model Name</label>
+                <input type="text" id="UrunAdi" name="modelName" required>
+            </div>
+            <div class="mb-3">
+                <label for="UrunMiktar">Fual Type</label>
+                <input type="text" id="UrunMiktar" name="fuleType" required>
+            </div>
+            <div class="mb-3">
+                <label for="UrunMiktar">Year</label>
+                <input type="number" id="UrunMiktar"  name="year" required>
+            </div>
+            <div class="mb-3">
+                <label for="UrunMiktar">Kilometeres</label>
+                <input type="number" id="UrunMiktar" name="kmRun" required>
+            </div>
+            <div class="mb-3">
+                <label for="UrunMiktar">Price</label>
+                <input type="number" id="UrunMiktar" name="price" required>
+            </div>
+            <div class="mb-3">
+                <label for="brand">Brand</label>
+                <input type="text" id="brand" name="brand" required>
+            </div>
+            <div class="mb-3">
+                <label for="carColor">Color</label>
+                <input type="text" id="carColor" name="carColor" required>
+            </div>
+            <div class="mb-3">
+                <label for="Kategori">Transmission Type</label>
+                <select id="Kategori" name="transmission" required>
+                    <option value="Automatic">Automatic</option>
+                    <option value="Manual">Manual</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="UrunImage" class="file-label">Car Front Image</label>
+                <input type="file" name="frontImage" id="UrunImage" class="file-input" required>
+
+                <label for="UrunImage" class="file-label">Car Back Image</label>
+                <input type="file" name="backImage" id="UrunImage" class="file-input" required>
+
+                <label for="UrunImage" class="file-label">Car left Image</label>
+                <input type="file" name="leftImage" id="UrunImage" class="file-input" required>
+
+                <label for="UrunImage" class="file-label">Car Right Image</label>
+                <input type="file" name="rightImage" id="UrunImage" class="file-input" required>
+
+                <label for="UrunImage" class="file-label">Car Dashboard Image</label>
+                <input type="file" name="dashboardImage" id="UrunImage" class="file-input" required>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="Reset" id="ekleButton1">Reset</button>
+                <button type="submit" id="ekleButton">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+        

@@ -1,0 +1,57 @@
+<%- include('admin_navbar.ejs') %>
+
+    <main class="table" id="customers_table">
+        <section class="table__header">
+            <h1>Customer's Car Service Booking List</h1>
+
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Id <span class="icon-arrow"></span></th>
+                        <th> Customer <span class="icon-arrow"></span></th>
+                        <th> Location <span class="icon-arrow"></span></th>
+                        <th> Order Date <span class="icon-arrow"></span></th>
+                        <th> Model <span class="icon-arrow"></span></th>
+                        <th> Amount <span class="icon-arrow"></span></th>
+                        <th>Edit</th>
+                        <th>Cancel Booking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% bookingData.forEach(function(data){ %>
+                        <% if (data.serviced=="NO") {%>
+
+                            <form action="/delete_booking/<%=data._id %>" method="post">
+                                <tr>
+                                    <td> 1 </td>
+                                    <td>
+                                        <%=data.user.username %>
+                                    </td>
+                                    <td>
+                                        <%= data.address %>
+                                    </td>
+                                    <td>
+                                        <%= data.date %>
+                                    </td>
+                                    <td>
+                                        <%= data.modelName %>
+                                    </td>
+                                    <td>
+                                        <%= data.phone %>
+                                    </td>
+                                    <td><button type="submit">Service Done</button></td>
+                                    <td><a href="/cancel_service/<%= data._id %>">Cancel Booking</a></td>
+                                </tr>
+                            </form>
+                            <%}%>
+                                <% }) %>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script>
+    </script>

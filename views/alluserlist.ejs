@@ -1,0 +1,43 @@
+<%- include('admin_navbar.ejs') %>
+
+    
+<main class="table" id="customers_table">
+    <section class="table__header">
+        <h1>Users List</h1>
+
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th> Id <span class="icon-arrow"></span></th>
+                    <th> Customer Name<span class="icon-arrow"></span></th>
+                    <th> Email<span class="icon-arrow"></span></th>
+                    <th>Phone<span class="icon-arrow"></span></th>
+                    <th> Location <span class="icon-arrow"></span></th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% userData.forEach(function(data){ %>
+                        <form action="/delete_user/<%= data._id %>" method="post">
+
+                            <tr>
+                                <td><%= data._id %></td>
+                                <td><%=data.username%></td>
+                                <td><%= data.email %></td>
+                                <td><%= data.phone %></td>
+                                <td><%= data.address %></td>
+                                <!-- <td><%= data.date %></td> -->
+                                <!-- <td><%= data.modelName %></td> -->
+                                <td><button type="submit">Delete</button></td>
+                                
+                            </tr>
+                        </form>
+                            
+                    <% }) %>
+
+            </tbody>
+        </table>
+    </section>
+</main>

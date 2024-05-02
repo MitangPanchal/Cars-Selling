@@ -1,0 +1,134 @@
+
+
+    <%- include('header.ejs') %>
+  <%- include('navbar.ejs') %>
+
+
+
+    <header>
+      <h3>Checkout</h3>
+    </header>
+
+    <main>
+
+      <section class="checkout-form">
+        <form action="" method="post" class="pay-form">
+         
+          <input type="hidden" name="name" value="<%=detail.modelName %>">
+          <input type="hidden" name="amount" value="<%= (detail.price*1)/100   %>">
+          <input type="hidden" name="description" value="Car Buying">
+
+          <section class="checkout-details">
+            <div class="checkout-details-inner">
+              <div class="checkout-lists">
+                <div class="card">
+                  <div class="card-image"><img src="/images/uploads/<%= detail.rightImage %>" alt=""></div>
+                  <div class="card-details">
+                    <div class="card-name">
+                      <h4>
+                        <%= detail.brand %>
+                      </h4>
+                    </div>
+                    <div class="card-name">
+                      <%= detail.modelName %>
+                    </div>
+                    <div class="card-price">
+                      <%= detail.price %> <span>
+                          <%= detail.price +100%>
+                        </span>
+                    </div>
+                    <div class="card-note">
+                      Note:- We will take the 1% amount of price as a token 
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="checkout-shipping">
+                  <h6>Shipping</h6>
+                  <p>$0</p>
+                </div>
+                <div class="checkout-total">
+                  <h6>Total</h6>
+                  <p>
+                    <%= detail.price %>
+                  </p>
+                </div>
+              </div>
+
+          <div class="form-control-btn">
+            <button type="submit">Continue</button>
+          </div>
+
+
+        </form>
+      </section>
+
+     
+
+         
+      </section>
+    
+
+    </main>
+
+    <%- include('footer.ejs') %>
+
+
+
+<!--Inside index.html -->
+ 
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+
+$(document).ready(function(){
+	$('.pay-form').submit(function(e){
+		e.preventDefault();
+
+		var formData = $(this).serialize();
+
+		$.ajax({
+			url:"/checkout/<%=detail._id%>",
+			type:"POST",
+			data: formData,
+			success:function(res){
+				if(res.success){
+					var options = {
+						"key": ""+res.key_id+"",
+						"amount": ""+res.amount+"",
+						"currency": "INR",
+						"name": ""+res.product_name+"",
+						"description": ""+res.description+"",
+						"order_id": ""+res.order_id+"",
+						"handler": function (response){
+							alert("Payment Succeeded");
+              window.open("http://localhost:3000/sales/<%=detail._id%>","_self")
+						},
+						"prefill": {
+							"contact":""+res.contact+"",
+							"name": ""+res.name+"",
+							"email": ""+res.email+""
+						},
+						"notes" : {
+							"description":""+res.description+""
+						},
+						"theme": {  
+							"color": "#2300a3"
+						}
+					};
+					var razorpayObject = new Razorpay(options);
+					razorpayObject.on('payment.failed', function (response){
+							alert("Payment Failed");
+
+					});
+					razorpayObject.open();
+				}
+				else{
+					alert(res.msg);
+				}
+			}
+		})
+
+	});
+});
+
+</script> 

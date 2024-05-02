@@ -1,0 +1,131 @@
+
+<%- include('admin_navbar.ejs') %>
+
+<main class="table" id="customers_table">
+    <section class="table__header">
+        <h1>Car Sells Data</h1>
+    
+
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th> Id <span class="icon-arrow"></span></th>
+                    <th> Purchase Owner <span class="icon-arrow"></span></th>
+                    <th>Phone<span class="icon-arrow"></span></th>
+                    <th>Model<span class="icon-arrow"></span></th>
+                    <th>Price<span class="icon-arrow"></span></th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function(datas){ %>
+
+                    <% if(datas.saled=="YES") {%>
+                        <tr>
+                            <td><%= datas._id %></td>
+                            <td><%= datas.purchaseowner.username%></td>
+                            <td><%= datas.purchaseowner.phone %></td>
+                            <td><%=datas.modelName %></td>
+                            <td><%=datas.price%></td>
+
+                        </tr>
+                    <% } %>
+                    <% }) %>
+
+            </tbody>
+        </table>
+    </section>
+</main>
+
+
+<main class="table" id="customers_table">
+    <section class="table__header">
+        <h1>Cars Not Sell</h1>
+      
+
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th> Id <span class="icon-arrow"></span></th>
+                    <th>Model<span class="icon-arrow"></span></th>
+                    <th>Type</th>
+                    <th>Car Color</th>
+                    <th>Km Run</th>
+                    <th>Price<span class="icon-arrow"></span></th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function(datas){ %>
+
+                    <% if(datas.saled=="NO") {%>
+                        <form action="/deleteproduct/<%=datas._id%>" method="post">
+
+                            <tr>
+                                <td><%= datas._id %></td>
+                                <td><%=datas.modelName %></td>
+                                <td><%= datas.modelType %></td>
+                                <td><%=datas.carColor %></td>
+                                <td><%= datas.kmRun %></td>
+                                <td><%=datas.price%></td>
+                            <td><button type="submit">Delete Product</button></td>
+                            <td><a href="/edit_product/<%= datas._id %>">Edit</a></td>
+                        </tr>
+                    </form>
+                        <% } %>
+                        <% }) %>
+                        
+            </tbody>
+        </table>
+    </section>
+</main>
+
+
+
+
+<main class="table" id="customers_table">
+    <section class="table__header">
+        <h1>Serviced Car List</h1>
+      
+
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th> Model Name <span class="icon-arrow"></span></th>
+                    <th>Model Type<span class="icon-arrow"></span></th>
+                    <th>User Name<span class="icon-arrow"></span></th>
+                    <th>User Email</th>
+                    <th>User Mobile No</th>
+                    <th>Sevice Type</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% bookingData.forEach(function(data){ %>
+
+                    <% if(data.serviced=="YES"){ %>
+                        <tr>
+
+                            <td><%= data.modelName %></td>
+                            <td><%= data.carModel %></td>
+                            <td><%= data.user.username %></td>
+                            <td><%= data.user.email %></td>
+                            <td><%= data.user.phone %></td>
+                            <td><%= data.service %></td>
+                            <td><%= data.date %></td>
+                        </tr>
+                            <%} %>
+
+                    <% }) %>
+
+            </tbody>
+        </table>
+    </section>
+</main>

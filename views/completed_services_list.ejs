@@ -1,0 +1,40 @@
+<%- include('admin_navbar.ejs') %>
+
+<main class="table" id="customers_table">
+    <section class="table__header">
+        <h1>Customer's Car Service Booking List</h1>
+
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th> Id <span class="icon-arrow"></span></th>
+                    <th> Customer <span class="icon-arrow"></span></th>
+                    <th>Phone<span class="icon-arrow"></span></th>
+                    <th> Location <span class="icon-arrow"></span></th>
+                    <th> Order Date <span class="icon-arrow"></span></th>
+                    <th> Model <span class="icon-arrow"></span></th>
+                    <th> Amount <span class="icon-arrow"></span></th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% completedData.forEach(function(data){ %>
+                    <% if (data.serviced=="YES") { %>
+                        <tr>
+                            <td><%= data._id %></td>
+                            <td><%= data.user.username %></td>
+                            <td><%= data.phone %></td>
+                            <td><%= data.address %></td>
+                            <td><%= data.date %></td>
+                            <td><%= data.modelName %></td>
+
+                        </tr>
+                        <% } %>
+                    <% }) %>
+
+            </tbody>
+        </table>
+    </section>
+</main>

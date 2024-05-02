@@ -1,0 +1,83 @@
+<%- include('header.ejs') %>
+
+    <%- include('navbar.ejs') %>
+
+        <link rel="stylesheet" href="/stylesheets/banner.css">
+
+
+        <div class="about_us_container">
+            <div class="background"></div>
+            <div class="aboutdiv text_div">
+                <h1>Booking Form</h>
+            </div>
+            <div class="aboutdiv img_div">
+                <img src="/images/banner.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="formbold-main-wrapper">
+            <div class="formbold-form-wrapper">
+                <div class="txt1">
+                    Car Service Form
+                </div><br>
+                <hr><br><br>
+                <form action="/carService" method="post">
+
+                    <div class="formbold-input-flex">
+                        <div>
+                            <input type="text" name="carModel" id="carModel" placeholder="Ex. Sedan, Mini, Suv"
+                                class="formbold-form-input" required/>
+                            <label for="carModel" class="formbold-form-label"> Car Model </label>
+                        </div>
+                        <div>
+                            <input type="text" name="modelName" id="modelName" placeholder="Ex. Aulto, RangeRover"
+                                class="formbold-form-input"  required/>
+                            <label for="modelName" class="formbold-form-label"> Model Name </label>
+                        </div>
+                    </div>
+
+                    <div class="formbold-input-flex">
+                        <div>
+                            <input type="date" name="date" id="date" placeholder="" class="formbold-form-input" required/>
+                            <label for="date" class="formbold-form-label"> Date of Booking </label>
+                        </div>
+
+                        <div>
+                            <input type="Number" name="phone" id="phone" placeholder="" class="formbold-form-input" required/>
+                            <label for="phone" class="formbold-form-label"> Phone Number </label>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <label for="email" class="formbold-form-label"> Email:</label>
+                        <input type="email" name="email" id="email" placeholder="Enter Your Email" class="formbold-form-input" required/>
+                    </div>
+                    <br>
+                    <div class="formbold-input-flex">
+                        <div>
+                            <select name="service" id="service">
+                                <option value="" disabled selected>-- Please Choose an Option --</option>
+                                <option value="full">Full Service</option>
+                                <option value="half">Half Service</option>
+                                <option value="wash">Car Wash</option>
+                            </select><br>
+                            <label for="service">Choose a Service Type:</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="address" class="formbold-form-label"> Address </label>
+                        <textarea class="formbold-form-input" placeholder="Type Address Here" story" rows="5"
+                            name="address" cols="33" required></textarea>
+                    </div>
+                    <br>
+                    <button class="formbold-btn" type="submit">
+                        Book
+                    </button>
+                    <button class="formbold-btn2" type="reset">
+                        Clear
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <%- include('footer.ejs') %>

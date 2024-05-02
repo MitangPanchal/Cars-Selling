@@ -1,0 +1,91 @@
+<!-- Navbar Start -->
+<nav class="navbar">
+
+  <div class="nav_banner">
+    <div class="nav_logo">
+      <h1>Krishna</h1><span>Cars</span>
+    </div>
+    <div class="nav_number">
+      <i class="ri-smartphone-fill"></i>
+      <p>8866211003</p>
+    </div>
+  </div>
+
+  <ul class="nav-menu">
+
+    <li class="nav-item">
+      <a href="/" class="nav-link">Home</a>
+    </li>
+
+    <li class="nav-item">
+      <a href="about" class="nav-link">About</a>
+    </li>
+
+    <li class="nav-item">
+      <a href="contact" class="nav-link">Contact</a>
+    </li>
+
+    <li class="nav-item dropdown ">
+      <a class="dropbtn nav-link">Services<i class="ri-arrow-down-fill"></i></a>
+      <div class="dropdown-content">
+        <a href="/carService">Book A Car Service</a>
+        <!-- <a href="#">Book A Car Wash</a> -->
+      </div>
+    </li>
+
+    <li class="nav-item dropdown ">
+      <a class="dropbtn nav-link">Cars<i class="ri-arrow-down-fill"></i></a>
+      <div class="dropdown-content">
+        <a href="/specific_car/mini">Mini</a>
+        <a href="/specific_car/sedan">Sedan</a>
+        <a href="/specific_car/suv">Suv</a>
+        <a href="/specific_car/sports">Sports Car</a>
+      </div>
+    </li>
+
+
+
+    <li class="nav-item dropdown ">
+      <a class="dropbtn nav-link">Profile<i class="ri-arrow-down-fill"></i></a>
+      <div class="dropdown-content">
+        <a href="/profile">Information</a>
+        <a href="/change_password">Change Password</a>
+        <a href="/booked_service_by_user">Booked Servecies</a>
+        <a href="/booked_car_by_user">Car Purchased</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a href="/logout" class="nav-link">LogOut</a>
+    </li>
+  </ul>
+
+  <div class="nav_logs">
+    <i class="ri-user-fill"></i>
+    <a href="/login">Sign In</a>
+  </div>
+
+  <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+</nav>
+
+<script>
+
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger.addEventListener("click", mobileMenu);
+
+  function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+  }
+  const navLink = document.querySelectorAll(".nav-link");
+
+
+
+</script>

@@ -1,0 +1,37 @@
+<%- include('header.ejs') %>
+    <%- include('navbar.ejs') %>
+
+   <h1 class="listing_header">Collection Of All Types Cars</h1>
+    <div class="listning-container">
+            <% carData.forEach(function(data){ %>
+
+                <% if(data.saled=="NO"){ %>
+
+                    <div class="car-box1">
+                        <img src="/images/uploads/<%=data.leftImage%>" alt="123456" srcset="">
+                        <div class="d1">
+                            <div class="a1">
+                                <h1><%= data.modelName %></h1>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="d2">
+                            <i class="ri-speed-up-line"><p><%= data.kmRun +"km" %></p></i>
+                            <i class="ri-gas-station-line"><p><%= data.fuleType %></p></i>
+                            <i class="ri-git-branch-line"><p><%= data.transmission %></p></i>
+                        </div>
+                        <hr>
+                        <div class="d3">
+                            <div class="c1">
+                                <%= data.price %>
+                            </div>
+                            <div class="c2">
+                                <a href="/details/<%= data._id%>">View Details</a>
+                            </div>
+                        </div>
+                    </div>       
+               <% } %>
+                    <% })%>
+        </div>
+
+        <%- include('footer.ejs') %>

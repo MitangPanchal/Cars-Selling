@@ -1,0 +1,86 @@
+<%- include('header.ejs') %>
+
+    <%- include('navbar.ejs') %>
+
+
+        <div class="box1">
+            <div class="box1_inner">
+                <h3>Find cars for sale and for service near you</h3>
+            </div>
+            <div class="box1_inner">
+                <h1>Find Your Dream Car</h1>
+            </div>
+            <div class="box1_inner">
+                <img src="/images/maincar.png" alt="">
+            </div>
+        </div>
+
+        <!-- Box 2 -->
+
+        <%- include('box2.ejs') %>
+
+            <!-- Why Choose Us -->
+
+            <%- include('why_choose_us.ejs') %>
+
+                <center>
+                    <h1>Collections Of All Types Cars</h1>
+                </center>
+                <div class="listning-container1">
+
+
+                        <% carData.forEach(function(data,index){ %>
+
+                            <% if(data.saled=="NO" ){ %>
+
+                                <div class="car-box1">
+                                    <img src="/images/uploads/<%=data.leftImage%>" alt="123456" srcset="">
+                                    <div class="d1">
+                                        <div class="a1">
+                                            <h1>
+                                                <%= data.modelName %>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="d2">
+                                        <i class="ri-speed-up-line">
+                                            <p>
+                                                <%= data.kmRun +"km" %>
+                                            </p>
+                                        </i>
+                                        <i class="ri-gas-station-line">
+                                            <p>
+                                                <%= data.fuleType %>
+                                            </p>
+                                        </i>
+                                        <i class="ri-git-branch-line">
+                                            <p>
+                                                <%= data.transmission %>
+                                            </p>
+                                        </i>
+                                    </div>
+                                    <hr>
+                                    <div class="d3">
+                                        <div class="c1">
+                                            <%= data.price %>
+                                        </div>
+                                        <div class="c2">
+                                            <a href="/details/<%= data._id%>">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    <% })%> 
+                                    
+                </div>
+                <div class="show_all_result_link"><a href="/listing">See All The Collections... <i
+                            class="ri-arrow-right-up-fill"></i></a></div>
+
+
+                <!-- Our Team -->
+                <%- include('our_team.ejs') %>
+
+                    <!-- Footer Start -->
+                    <%- include('footer.ejs') %>
+                        <!-- Footer End -->

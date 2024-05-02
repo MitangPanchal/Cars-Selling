@@ -1,0 +1,43 @@
+<%- include('header.ejs') %>
+<%-include('navbar.ejs') %>
+
+
+<br><br>
+<center><h1>Srrvice Book By You</h1></center>
+<br><br>
+
+<main class="table" id="customers_table">
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th>Phone<span class="icon-arrow"></span></th>
+                    <th> Location <span class="icon-arrow"></span></th>
+                    <th> Date <span class="icon-arrow"></span></th>
+                    <th> Model Name <span class="icon-arrow"></span></th>
+                    <th>Model Type</th>
+                    <th>Service Type</th>
+                    <th>Serviced Completed?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% user.bookings.forEach(function(data){ %>
+                    <tr>
+                        <td><%=data.phone%></td>
+                        <td><%=data.address%></td>
+                        <td><%= data.date%></td>
+                        <td><%= data.modelName %></td>
+                        <td><%= data.carModel %></td>
+                        <td><%= data.service %></td>
+                        <td><%= data.serviced %></td>
+
+
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </section>
+</main>
+    
+
+<%- include('footer.ejs') %>

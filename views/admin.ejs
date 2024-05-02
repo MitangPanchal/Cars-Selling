@@ -1,0 +1,34 @@
+<%- include('admin_navbar.ejs') %>
+
+<center><h1>List Of Msg That Send By User</h1></center>
+<div class="dashboard-container">
+    <!-- <h1>Welcome To The Admin Pannel</h1>
+    <a href="/">Go To Webiste...</a> -->
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th> Id <span class="icon-arrow"></span></th>
+                    <th>Email Of User <span class="icon-arrow"></span></th>
+                    <th>Msg<span class="icon-arrow"></span></th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% issueData.forEach(function(datas){ %>
+                        <tr>
+                            <form action="/delete_msg/<%= datas._id %>" method="post">
+                                <td><%= datas._id %></td>
+                                <td><%= datas.user%></td>
+                                <td><%= datas.msg %></td>
+                                <td><button type="submit">Delete</button> </td>
+                            </form>
+
+                        </tr>
+               
+                    <% }) %>
+
+            </tbody>
+        </table>
+    </section>
+</div>

@@ -1,0 +1,89 @@
+
+<%- include('admin_navbar.ejs') %>
+
+<main class="table" id="customers_table">
+    <section class="table__header">
+        <h1>Cars Not Sell</h1>
+      
+
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th> Id <span class="icon-arrow"></span></th>
+                    <th>Model<span class="icon-arrow"></span></th>
+                    <th>Type</th>
+                    <th>Car Color</th>
+                    <th>Km Run</th>
+                    <th>Price<span class="icon-arrow"></span></th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% productData.forEach(function(datas){ %>
+
+                    <% if(datas.saled=="NO") {%>
+                        <form action="/deleteproduct/<%=datas._id%>" method="post">
+
+                            <tr>
+                                <td><%= datas._id %></td>
+                                <td><%=datas.modelName %></td>
+                                <td><%= datas.modelType %></td>
+                                <td><%=datas.carColor %></td>
+                                <td><%= datas.kmRun %></td>
+                                <td><%=datas.price%></td>
+                            <td><button type="submit">Delete Product</button></td>
+                            <td><a href="/edit_product/<%= datas._id %>">Edit</a></td>
+                        </tr>
+                    </form>
+                        <% } %>
+                        <% }) %>
+                        
+            </tbody>
+        </table>
+    </section>
+</main>
+
+
+<main class="table" id="customers_table">
+    <section class="table__header">
+        <h1>Product List</h1>
+        <div class="input-group">
+            <input type="search" placeholder="Search Data...">
+        </div>
+
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th> Id <span class="icon-arrow"></span></th>
+                    <th> Model <span class="icon-arrow"></span></th>
+                    <th>Car Name</th>
+                    <th>Transmission<span class="icon-arrow"></span></th>
+                    <th> Price <span class="icon-arrow"></span></th>
+                    <th> Year <span class="icon-arrow"></span></th>
+                    <th> Brand <span class="icon-arrow"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% productData.forEach(function(data){ %>
+                        <tr>
+                            <td><%= data._id %></td>
+                            <td><%= data.modelType %></td>
+                            <td><%=data.modelName %></td>
+                            <td><%= data.transmission %></td>
+                            <td><%= data.price %></td>
+                            <td><%= data.year %></td>
+                            <td><%= data.brand %></td>
+                           
+
+                        </tr>
+                    <% }) %>
+
+            </tbody>
+        </table>
+    </section>
+</main>
