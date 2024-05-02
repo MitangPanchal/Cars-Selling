@@ -1,0 +1,86 @@
+@font-face {
+    font-family: myFont;
+    src: url(./DM_Sans/DMSans-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: sanskrit;
+    src: url(./samarkan-font/SamarkanNormal-Gg5D.ttf);
+}
+
+@font-face {
+    font-family: cars;
+    src: url(./gravis-font/GravisPersonalUseRegular-w1ZOx.ttf);
+}
+
+ *{ 
+Margin:0%;
+Padding:0%;
+Box-sizing: border-box;
+font-family: myFont;
+/* color: #333; */
+}
+
+html,body{
+Width:100%;
+Height:100%;
+/* overflow-x: hidden; */
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    
+}
+.box1{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e9f2ff;
+    border-radius: 50px;
+    gap: 50px;
+    padding-top: 100px;
+    margin-bottom: 50px;
+}
+
+.box1_inner{
+    width: 100%;
+    height: max-content;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box1_inner:nth-child(2){
+    font-size: 2.5vw;
+}
+
+.listning-container1{
+    margin-top: 20px;
+    height: 430px;
+    width: 100%;
+    display: flex;  
+    flex-wrap: wrap;
+    overflow: hidden;
+    gap:50px;
+    padding: 30px 100px;
+    color: #050b20;
+    border-radius: 50px;
+    /* border:2px solid red; */
+  }
+
+@media (max-width:768px) {
+    .box1{
+        width: 100vw;
+        border-radius: 0;
+        margin: 0;
+        margin-bottom: 50px;
+        padding-top: 50px;
+    }
+    .box1_inner img{
+        width: 100vw;
+    }
+}

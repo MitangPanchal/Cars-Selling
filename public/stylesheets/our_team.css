@@ -1,0 +1,52 @@
+
+
+.ot-container{
+    height: max-content;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    margin-bottom: 80px;
+}
+.t1{
+    height: 400px;
+    width: max-content;  
+    background-color: lavender;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.t1 img{
+    /* border: 2px solid red; */
+    /* height: 400px; */
+    width: 300px;
+    /* aspect-ratio: 3/2; */
+
+}
+.ot_banner{ 
+    text-align: center;
+    margin-bottom: 50px;
+}
+.ot-container h3{
+    font-size: 22px;
+    font-weight: 600;
+    
+}
+.ot-container h4{
+    font-size: 17px;
+    font-weight: 200;
+}
+
+@media(max-width: 768px){
+    .ot-container{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        /* border: 2px solid red; */
+    }
+    
+}

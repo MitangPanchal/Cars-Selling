@@ -1,0 +1,53 @@
+.wcu_container{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    /* border: 2px solid red; */
+    padding: 40px;
+    margin-bottom: 80px;
+}
+.wcu_banner{
+   text-align: center;
+   margin-top: 80px;
+}
+
+.b1{
+   height: max-content;
+   width: 100vw;
+   padding: 20px;
+}
+
+h2{
+    font-size: 23px;
+    font-weight: 600;
+}
+h3{
+    font-size: 17px;
+    font-weight:200;
+}
+
+@media(max-width: 768px){
+    .wcu_container{
+        height: max-content;
+        width: 100vw;
+        display: block;
+    }
+    .b1{
+        height: max-content;
+        width: 100%;
+
+    }
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 100%;
+        font-weight: 600;
+    }
+    h3{
+        font-size: 100%;
+        font-weight:200;
+    }
+}

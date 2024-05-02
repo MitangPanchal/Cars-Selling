@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins,sans-serif;
+}
+html,body{
+    width:100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+#outer{
+    width:100%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+#inner{
+    width:55%;
+    height: 80%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow:0px 0px 5px white;
+    outline: none;
+    display: flex;
+}
+.left{
+    height: 100%;
+    width: 55%;
+    /* border: 2px solid red; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+.left p{
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.form-field{
+    width: 100%;
+    height:max-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:30px;
+}
+.form-field input{
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    width:17vw;
+}
+.name{
+    width:max-content;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap:10px;
+}
+.terms_conditions{
+    width:max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.terms_conditions>input{
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+.terms_conditions>label{
+    font-size:13px;
+    font-weight: 400;
+}
+#register{
+    width:120px;
+    height: 50px;
+    border: none;
+    background-color: rgb(64, 64, 238);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#register:hover{
+    box-shadow: 0px 0px 10px black;
+}
+
+.logs{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    /* border: 2px solid black; */
+}
+.logs .google{
+    width:120px;
+    height: 50px;
+    border: none;
+    background-color: rgb(200, 47, 47);
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.logs a{
+    text-decoration: none;
+    color: white;
+}
+.google:hover{
+    box-shadow: 0px 0px 10px black;
+}
+
+.right{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.passError{
+    color: red;
+    font-size: 20px;
+    /* display: none; */
+}
+

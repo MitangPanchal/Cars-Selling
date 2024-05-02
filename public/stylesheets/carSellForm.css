@@ -1,0 +1,185 @@
+#form {
+  background-color: #EEF7F1;
+}
+
+#Kategori {
+  height: 38px;
+  border: 1px solid #CED4D9;
+  border-radius: 3px;
+}
+
+#ekleButton:hover {
+  box-shadow: -1px 1px 17px 0px rgba(0,0,0,0.75);
+}
+
+
+
+li {
+  margin-right: 3.5em;
+
+}
+
+li:hover {
+  box-shadow: -1px 1px 17px 0px rgba(0,0,0,0.75);
+  
+}
+
+input:hover {
+  border-color: rgb(106, 161, 143);
+}
+
+#loginform {
+  border: 10px solid gray;
+  background-color: rgb(199, 194, 194);
+  opacity: 0.8;
+}
+
+#adminbody {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(89,44,111,1) 46%, rgba(98,29,93,1) 98%);
+}
+
+#invalidlogin {
+  display: none;
+}
+#loginbutton {
+  position: absolute;
+  left: 44.5%;
+  top: 430px;
+} */
+
+/* Navbar styles */
+.navbar {
+  background-color: #f8f9fa;
+  padding: 15px 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+}
+
+/* Form styles */
+.container {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  
+
+}
+
+.form-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="Reset"] {
+  width: 20%;
+  padding: 10px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5vh;
+}
+
+button[type="Reset"]:hover {
+  background-color: #f32626;
+}
+
+button[type="submit"] {
+  width: 20%;
+  padding: 10px;
+  float: right;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5vh;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+
+
+
+
+/* Style for the file input container */
+.file-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style for the file input */
+.file-input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #495057;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Style for the file input when focused */
+.file-input:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+input[type="file"]::file-selector-button{
+  padding: 10px 20px;
+  /* border-radius: 10px; */
+  border: 1px solid black;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: white;
+  transition: 0.5s all;
+}
