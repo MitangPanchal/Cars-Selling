@@ -7,8 +7,8 @@ const bookingModel = require('../models/service_bookings');
 const salesModel = require('../models/sales');
 
 const razorpayInstance = new Razorpay({
-    key_id: "rzp_test_b4uwOTKnvRfiQ6",
-    key_secret: "JSJBP3CzE8T3YLh6rdckksWh"
+    key_id: "",
+    key_secret: ""
 });
 
 
@@ -33,7 +33,7 @@ const createOrder = async(req,res)=>{
                         msg:'Order Created',
                         order_id:order.id,
                         amount:amount,
-                        key_id:"rzp_test_b4uwOTKnvRfiQ6",
+                        key_id:"",
                         product_name:req.body.name,
                         description:req.body.description,
                         contact:req.body.checkout_phone,
